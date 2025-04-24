@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+</head>
+    <body>
+        <table border=1>
+            <tr>
+                <td colspan=8 align="center">
+                    <h2>Employees Information</h2>
+                </td>
+            </tr>
+                {% if record is not empty %}
+                <tr>
+                    <td align="center" >ID</td>
+                    <td align="center">Name</td>
+                    <td align="center">Extension</td>
+                    <td align="center">Email</td>
+                    <td align="center">Title</td>
+                    <td align="center">Salary</td>
+                    <td align="center">Date of Birth</td>
+                    <td align="center">Hire Date</td>
+                </tr>
+                <tr>
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.name }}</td>
+                    <td>{{ record.extension }}</td>
+                    <td>{{ record.email }}</td>
+                    <td align="center">{{ record.title }}</td>
+                    <td align="center">{{ record.salary }}</td>
+                    <td> {{ record.DOB}} </td>
+                    <td> {{ record.hire_date}} </td>
+                {% else %}
+                    <td colspan="6" align="center">NO RECORD FOUND!</td>
+                {% endif %}
+            </tr>
+        </table>
+        <BR>
+            <pr><a href={% url 'index' %} class="btn btn-danger">BACK</a></pr>
+    </body>
+</html>

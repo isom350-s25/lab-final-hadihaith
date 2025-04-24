@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+</head>
+<div style="padding: 30px;">
+    <body style="background-color: rgb(233, 233, 233);">
+        <table border=1>
+            <tr>
+                <td colspan=10 align="center">
+                    <h2>Employees Information</h2>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" >ID</td>
+                <td align="center">Name</td>
+                <td align="center">Extension</td>
+                <td align="center">Email</td>
+                <td align="center">Title</td>
+                <td align="center">Salary</td>
+                <td align="center">Date of Birth</td>
+                <td align="center">Hire Date</td>
+                <td align="center">Edit</td>
+                <td align="center">Delete</td>
+            </tr>
+        {% for x in employees %}
+            <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.extension }}</td>
+                <td>{{ x.email }}</td>
+                <td align="center">{{ x.title }}</td>
+                <td align="center">{{ x.salary }}</td>
+                <td> {{ x.DOB}} </td>
+                <td> {{ x.hire_date}} </td>
+                <td><a class="btn btn-primary" href="{% url 'edit_employee' x.id %}">Edit</a></td>
+                <td><a class="btn btn-danger" href="{% url 'delete_employee' x.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+        <BR>
+        <pr><a href={% url 'index' %} class="btn btn-danger">BACK</a></pr>
+        <pr><a href={% url 'add_employee' %} class="btn btn-success">add employee</a></pr>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+</head>
+<body>
+<div style="padding: 30px;">
+<h1>Employee Overview</h1>
+<ul>
+    <li>
+        Number of Employees: {{ no_employees }}
+    </li>
+    <li>
+        Average Salary: {{ avg_salary }}
+    </li>
+    <li>
+        Min Salary: {{ min_salary }}
+    </li>
+    <li>
+        Max Salary: {{ max_salary }}
+    </li>
+</ul>
+<pr><a href={% url 'index' %} class="btn btn-danger">BACK</a></pr>
+</div>
+</body>
+</html>
